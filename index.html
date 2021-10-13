@@ -44,7 +44,7 @@
                 <li class="menu-item" data-section="servicos">
                     <a href="#">Peças e Serviços</a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item" data-section="galeria">
                     <a href="#">Galeria</a>
                 </li>
                 <li class="menu-item">
@@ -89,6 +89,25 @@
         </div>
     </header>
     <main>
+        <section class="sBanner">
+            <div class="sBanner-container-showroom">
+                <a href="https://showroommercedes-benz.com.br/" target="_blank" class="sBanner-showroom"></a>
+            </div>
+            <div class="sBanner-container-video">
+                <button id="sBannerVideo" class="sBanner-video"></button>
+            </div>
+            <!-- ADICIONA O ID DO VIDEO DO YOUTUBE PRA EMBEDAR -->
+            <div id="sBannerModal" class="sBanner-modal" data-video="kYXO4WCotZA">
+                <div class="sBanner-modal-container">
+                    <div class="sBanner-modal-player">
+                        <iframe class="sBannner-modal-video"
+                            src=""
+                            frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                        <button class="sBannner-modal-close" onclick="Site.Banner(true)">&times;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="acros" class="sArocs">
             <div class="container">
                 <div class="box-text">
@@ -372,6 +391,36 @@
                 </div>
             </div>
         </section>
+        <section id="galeria" class="sGallery" style="margin-bottom: 100px;">
+            <div class="container">
+                <div class="sGallery-container">
+                    <h2 class="sectionTitle light">Galeria de Foto e Vídeo</h2>
+                    <p>
+                        Confira nossa galeria e conheça de perto todas as inovações do Arocs.
+                    </p>
+                </div>
+                <div id="gallerySlide" class="sGallery-slide">
+                    <!-- 
+                        ESTE PRIMEIRO ITEM COMO PASSADO NO ESCOPO É UM VÍDEO, NO BACKGROUND-IMAGE ADICIONAR O DI DO VÍDEO
+                        ENTRE O ../VI/(AQUI)/.. E NO DATA-VIDEO="(AQUI)"
+                     -->
+                    <div class="sGallery-item video"
+                        style="background-image: url('https://img.youtube.com/vi/xcJtL7QggTI/hqdefault.jpg');"
+                        data-video="xcJtL7QggTI">
+                        <!-- ESSA DIV VAI CARREGAR O VIDEO PELA API DO YOUTUBE -->
+                        <div id="player"></div>
+                    </div>
+                    <div class="sGallery-item" style="background-image: url('https://dummyimage.com/1107x637.png');">
+                    </div>
+                    <div class="sGallery-item" style="background-image: url('https://dummyimage.com/1107x637.png');">
+                    </div>
+                    <div class="sGallery-item" style="background-image: url('https://dummyimage.com/1107x637.png');">
+                    </div>
+                    <div class="sGallery-item" style="background-image: url('https://dummyimage.com/1107x637.png');">
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="mainFooter">
         <div class="container">
@@ -484,7 +533,9 @@
     </footer>
 </body>
 
+<script src="https://www.youtube.com/iframe_api"></script>
 <script src="./assets/js/jquery-3.6.0.min.js"></script>
+<script src="./assets/js/slick.min.js"></script>
 <script src="./assets/js/main.js"></script>
 
 </html>

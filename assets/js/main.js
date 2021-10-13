@@ -2,7 +2,9 @@ Site = {};
 
 Site.Init = function () {
     Site.MainHeader();
+    Site.Banner();
     Site.Accordion();
+    Site.Gallery();
     Site.Footer();
 }
 
@@ -33,24 +35,37 @@ Site.MainHeader = function () {
         body.stop().animate({ scrollTop: targetTop - diference }, 500);
     })
 
-    headerSubMenu.on('click', function() {
+    headerSubMenu.on('click', function () {
         $('.mainHeader-menu-mb').addClass('active');
     })
 
-    headerSubMenuClose.on('click', function() {
+    headerSubMenuClose.on('click', function () {
         $('.mainHeader-menu-mb').removeClass('active');
     })
 }
 
-Site.Accordion = function() {
+Site.Banner = function (close = false) {
+    const buttonModal = $('#sBannerVideo');
+    const modal = $('#sBannerModal');
+    const videoId = modal.attr('data-video')
+
+    buttonModal.on('click', function(){
+        modal.find('iframe')[0].src = `https://www.youtube-nocookie.com/embed/${videoId}`
+        modal.addClass('active');
+    })
+
+    if (close) {
+        modal.find('iframe')[0].src = ""
+        modal.removeClass('active');
+    }
+}
+
+Site.Accordion = function () {
     const accordion = $('.accordion-title');
-    
-    accordion.on('click', function() {
+
+    accordion.on('click', function () {
         const clickedAccordion = $(this)
         const isActive = clickedAccordion.parent().hasClass('active')
-
-        console.log(clickedAccordion)
-        console.log(isActive)
 
         if (isActive) {
             clickedAccordion.parent().removeClass('active')
@@ -61,10 +76,70 @@ Site.Accordion = function() {
     })
 }
 
-Site.Footer = function() {
+Site.Gallery = function () {
+    const gallerySlide = '#gallerySlide'
+    const galleryItem = $(`${gallerySlide}`).find('.sGallery-item');
+
+    $(`${gallerySlide}`).slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: true,
+        adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    arrows: false
+                }
+            }
+        ]
+    });
+
+    galleryItem.on('click', function () {
+        const item = $(this);
+
+        if (item.hasClass('video')) {
+            const videoId = item.attr('data-video');
+
+            /// 2. This code loads the IFrame Player API code asynchronously.
+            var tag = document.createElement('script');
+
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            // 3. This function creates an <iframe> (and YouTube player)
+            //    after the API code downloads.
+            var player;
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                    videoId: videoId,
+                    playerVars: {
+                        'playsinline': 1
+                    },
+                    events: {
+                        'onReady': onPlayerReady
+                    }
+                });
+            }
+
+            // 4. The API will call this function when the video player is ready.
+            function onPlayerReady(event) {
+                event.target.playVideo();
+            }
+
+            item.addClass('playing');
+            onYouTubeIframeAPIReady();
+        }
+    })
+}
+
+Site.Footer = function () {
     const backToTop = $('#backToTop');
 
-    backToTop.on('click', function() {
+    backToTop.on('click', function () {
         let body = $("html, body");
         body.stop().animate({ scrollTop: 0 }, 500);
     })
