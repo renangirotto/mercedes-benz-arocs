@@ -29,7 +29,7 @@
                 <li class="menu-item" data-section="acros">
                     Arocs
                 </li>
-                <li class="menu-item">
+                <li class="menu-item" data-section="features">
                     <a href="#">Features Especiais</a>
                 </li>
                 <li class="menu-item">
@@ -96,13 +96,12 @@
             <div class="sBanner-container-video">
                 <button id="sBannerVideo" class="sBanner-video"></button>
             </div>
-            <!-- ADICIONA O ID DO VIDEO DO YOUTUBE PRA EMBEDAR -->
+            <!-- ADICIONA O ID DO VIDEO AO 'DATA-VIDEO' DO YOUTUBE PRA EMBEDAR -->
             <div id="sBannerModal" class="sBanner-modal" data-video="kYXO4WCotZA">
                 <div class="sBanner-modal-container">
                     <div class="sBanner-modal-player">
-                        <iframe class="sBannner-modal-video"
-                            src=""
-                            frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                        <iframe class="sBannner-modal-video" src="" frameborder="0"
+                            allowfullscreen="allowfullscreen"></iframe>
                         <button class="sBannner-modal-close" onclick="Site.Banner(true)">&times;</button>
                     </div>
                 </div>
@@ -144,6 +143,96 @@
                 <figure class="box-truck">
                     <img src="./assets/images/arocs-1.png" alt="Arocs">
                 </figure>
+            </div>
+        </section>
+        <section id="features" class="sFeatures">
+            <div class="container">
+                <h2 class="sectionTitle">FEATURES ESPECIAIS</h2>
+                <p>Desenvolvido pensando na mineração brasilieira, o Arocs conta com itens de série essenciais para o
+                    seu negócio.</p>
+                <select id="featureSelect" class="sFeatures-select">
+                    <option value="tab-1">Cabine</option>
+                    <option value="tab-2">Itens de Segurança</option>
+                    <option value="tab-3">Para-choque e faróis</option>
+                    <!-- <option value="tab-4">Pneus OTR e rodas reforçadas</option>
+                    <option value="tab-5">Sistema elétrico</option>
+                    <option value="tab-6">Suspensão traseira</option>
+                    <option value="tab-7">Motor OM 460</option>
+                    <option value="tab-8">Câmbio G 340 – 12</option>
+                    <option value="tab-9">Eixos Traseiros</option> -->
+                </select>
+                <div class="sFeatures-tabs">
+                    <button class="sFeatures-tabs-item active" data-tab="tab-1">Cabine</button>
+                    <button class="sFeatures-tabs-item" data-tab="tab-2">Itens de Segurança</button>
+                    <button class="sFeatures-tabs-item" data-tab="tab-3">Para-choque e faróis</button>
+                    <!-- <button class="sFeatures-tabs-item" data-tab="tab-4">Pneus OTR e rodas reforçadas</button>
+                    <button class="sFeatures-tabs-item" data-tab="tab-5">Sistema elétrico</button>
+                    <button class="sFeatures-tabs-item" data-tab="tab-6">Suspensão traseira</button>
+                    <button class="sFeatures-tabs-item" data-tab="tab-7">Motor OM 460</button>
+                    <button class="sFeatures-tabs-item" data-tab="tab-8">Câmbio G 340 – 12</button>
+                    <button class="sFeatures-tabs-item" data-tab="tab-9">Eixos Traseiros</button> -->
+                </div>
+                <div class="sFeatures-panel">
+                    <div class="sFeatures-panel-item active" data-panel="tab-1">
+                        <figure class="image">
+                            <img src='https://dummyimage.com/677x542.png' alt='' />
+                        </figure>
+                        <div class="text">
+                            <h4>CABINE</h4>
+                            <p>
+                                Um dos diferenciais do caminhão, essa roda especial e mais reforçada, é produzida com
+                                uma liga de aço de alta resistência e tem uma capacidade de carga de 5 toneladas por
+                                roda.
+                                <br><br>
+                                Além disso, também temos os pneus OTR na medida 325/95 R 24, que possuem um perfil com
+                                sulcos mais profundos que proporcionam uma maior aderência ao solo e maior tração aos
+                                eixos. São adequados para terrenos irregulares!
+                                <br><br>
+                                Além disso, também temos os pneus OTR na medida 325/95 R 24, que possuem um perfil com
+                                sulcos mais profundos que proporcionam uma maior aderência ao solo e maior tração aos
+                                eixos. São adequados para terrenos irregulares!
+                                <br><br>
+                                Além disso, também temos os pneus OTR na medida 325/95 R 24, que possuem um perfil com
+                                sulcos mais profundos que proporcionam uma maior aderência ao solo e maior tração aos
+                                eixos. São adequados para terrenos irregulares!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="sFeatures-panel-item" data-panel="tab-2">
+                        <figure class="image">
+                            <img src='https://dummyimage.com/677x542.png' alt='' />
+                        </figure>
+                        <div class="text">
+                            <h4>Itens de Segurança</h4>
+                            <p>
+                                Um dos diferenciais do caminhão, essa roda especial e mais reforçada, é produzida com
+                                uma liga de aço de alta resistência e tem uma capacidade de carga de 5 toneladas por
+                                roda.
+                                <br><br>
+                                Além disso, também temos os pneus OTR na medida 325/95 R 24, que possuem um perfil com
+                                sulcos mais profundos que proporcionam uma maior aderência ao solo e maior tração aos
+                                eixos. São adequados para terrenos irregulares!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="sFeatures-panel-item" data-panel="tab-3">
+                        <figure class="image">
+                            <img src='https://dummyimage.com/677x542.png' alt='' />
+                        </figure>
+                        <div class="text">
+                            <h4>Para-choque e faróis</h4>
+                            <p>
+                                Um dos diferenciais do caminhão, essa roda especial e mais reforçada, é produzida com
+                                uma liga de aço de alta resistência e tem uma capacidade de carga de 5 toneladas por
+                                roda.
+                                <br><br>
+                                Além disso, também temos os pneus OTR na medida 325/95 R 24, que possuem um perfil com
+                                sulcos mais profundos que proporcionam uma maior aderência ao solo e maior tração aos
+                                eixos. São adequados para terrenos irregulares!
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="servicos" class="sServices">

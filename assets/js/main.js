@@ -3,6 +3,7 @@ Site = {};
 Site.Init = function () {
     Site.MainHeader();
     Site.Banner();
+    Site.Tabs();
     Site.Accordion();
     Site.Gallery();
     Site.Footer();
@@ -58,6 +59,40 @@ Site.Banner = function (close = false) {
         modal.find('iframe')[0].src = ""
         modal.removeClass('active');
     }
+}
+
+Site.Tabs = function () {
+    const selectMobile = '#featureSelect';
+    const tabs = '.sFeatures-tabs-item';
+    const panels = '.sFeatures-panel-item';
+
+    $(`${selectMobile}`).on('change', function() {
+        const selectedTab = $(`${selectMobile} option:selected`).val();
+
+        $(`${panels}`).removeClass('active');
+
+        $(`${panels}`).each(function() {
+            if ($(this).attr('data-panel') === selectedTab) {
+                $(this).addClass('active')
+            }
+        })
+    })
+
+    $(`${tabs}`).on('click', function() {
+        const selectedTab = $(this).attr('data-tab');
+
+        $(`${tabs}`).removeClass('active');
+
+        $(this).addClass('active');
+
+        $(`${panels}`).removeClass('active');
+
+        $(`${panels}`).each(function() {
+            if ($(this).attr('data-panel') === selectedTab) {
+                $(this).addClass('active')
+            }
+        })
+    })
 }
 
 Site.Accordion = function () {
