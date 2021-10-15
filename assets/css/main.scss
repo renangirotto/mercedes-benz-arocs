@@ -354,7 +354,7 @@ main {
         border: none;
         position: fixed;
         top: 163px;
-        z-index: 1;
+        z-index: 2;
         background-color: transparent;
         background-image: url("../images/button-showroom.png");
         background-position: center;
@@ -392,8 +392,8 @@ main {
         right: 0;
         bottom: 0;
         left: 0;
-        z-index: 2;
-        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 3;
+        background-color: rgba(0, 0, 0, 0.9);
 
         .sBanner-modal-container {
             display: flex;
@@ -457,7 +457,7 @@ main {
 
     @media #{$media-lg} {
         padding-bottom: 0px;
-        margin-bottom: 176px;
+        margin-bottom: 72px;
         background-image: url("../images/bg-1.png");
         background-position: 50vw top;
         background-size: 976px 96%;
@@ -537,10 +537,10 @@ main {
             }
 
             + h3 {
-                margin-top: 72px;
+                margin-top: 64px;
 
                 @media #{$media-lg} {
-                    margin-top: 48px;
+                    margin-top: 32px;
                 }
             }
         }
@@ -571,10 +571,24 @@ main {
 }
 
 .sFeatures {
-    padding: 120px 38px 41px;
+    padding: 120px 38px 44px;
+    background: rgba(255, 255, 255, 1);
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 100%);
+    background: -webkit-gradient(
+        left top,
+        left bottom,
+        color-stop(0%, rgba(255, 255, 255, 1)),
+        color-stop(100%, rgba(242, 242, 242, 1))
+    );
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 100%);
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2', GradientType=0 );
 
     @media #{$media-lg} {
-        padding: 40px 54px 46px;
+        padding: 40px 54px 44px;
+        background: $c-white;
     }
 
     .sectionTitle {
@@ -669,7 +683,7 @@ main {
                 @media #{$media-lg} {
                     max-width: 542px;
                     height: 542px;
-                    padding: 32px 46px 72px;
+                    padding: 32px 16px 72px 46px;
                     background-color: $c-grey-7;
                 }
 
@@ -696,6 +710,7 @@ main {
 
                     @media #{$media-lg} {
                         max-height: 406px;
+                        padding-right: 30px;
                         overflow-y: auto;
                         font-size: 20px;
                     }
@@ -714,11 +729,15 @@ main {
                     &::-webkit-scrollbar-thumb {
                         background: $c-blue-1;
                     }
-                    
+
                     /* Handle on hover */
                     &::-webkit-scrollbar-thumb:hover {
                         background: $c-blue-1;
                     }
+                }
+
+                strong {
+                    font-weight: 600;
                 }
             }
 
@@ -733,175 +752,277 @@ main {
     }
 }
 
-.sServices {
-    padding: 56px 38px 74px;
-    background: rgba(255, 255, 255, 1);
-    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
-    background: -webkit-gradient(
-        left top,
-        left bottom,
-        color-stop(0%, rgba(255, 255, 255, 1)),
-        color-stop(100%, rgba(245, 245, 245, 1))
-    );
-    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
-    background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
-    background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f5f5f5', GradientType=0 );
+.sTechnical {
+    padding: 44px 38px 32px;
+    background: rgba(242, 242, 242, 1);
 
     @media #{$media-lg} {
-        padding: 78px 54px 94px;
+        padding: 44px 38px 72px;
+        background: rgba(255, 255, 255, 1);
+        background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 100%);
+        background: -webkit-gradient(
+            left top,
+            left bottom,
+            color-stop(0%, rgba(255, 255, 255, 1)),
+            color-stop(100%, rgba(242, 242, 242, 1))
+        );
+        background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 100%);
+        background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 100%);
+        background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 100%);
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2', GradientType=0 );
     }
 
     .sectionTitle {
-        margin-bottom: 82px;
+        margin-bottom: 38px;
 
         @media #{$media-lg} {
-            margin-bottom: 92px;
+            margin-bottom: 25px;
+        }
+
+        &.subTitle {
+            margin-bottom: 64px;
+            font-size: 52px;
+
+            @media #{$media-lg} {
+                font-size: 35px;
+                margin-bottom: 50px;
+            }
         }
     }
 
-    .accordion {
-        &:not(:last-child) {
-            margin-bottom: 18px;
-        }
+    p {
+        margin-bottom: 30px;
+        font-family: "Corporate-S";
+        font-weight: 300;
+        font-size: 28px;
+        color: $c-grey-1;
 
-        .accordion-title {
+        @media #{$media-lg} {
+            margin-bottom: 58px;
+            font-size: 18px;
+        }
+    }
+
+    .sTechnical-container {
+        @media #{$media-lg} {
             display: flex;
-            align-items: center;
-            cursor: pointer;
+        }
 
-            span {
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                position: relative;
-                margin-right: 12px;
-                background-color: $c-blue-1;
+        .sTechnical-figureBox {
+            figure {
+                width: 100%;
 
-                &::before,
-                &::after {
-                    content: "";
-                    display: block;
-                    width: 16px;
-                    height: 4px;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    margin-top: -2px;
-                    margin-left: -8px;
-                    background-color: $c-white;
+                @media #{$media-lg} {
+                    min-width: 632px;
+                    max-width: 632px;
                 }
 
-                &::after {
-                    transform: rotate(90deg);
+                img {
+                    display: block;
+                    width: 100%;
                 }
             }
 
-            h3 {
-                font-family: "Corporate-A-Condensed";
-                font-weight: normal;
-                font-size: 45px;
+            small {
+                font-family: "Corporate-S";
+                font-size: 10px;
+                font-style: italic;
+                color: $c-grey-2;
+
+                @media #{$media-lg} {
+                    font-size: 8px;
+                }
             }
         }
 
-        .accordion-body {
-            display: none;
+        .sTechnical-slideBox {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 58px 0 0;
 
             @media #{$media-lg} {
-                grid-auto-columns: 1fr;
-                grid-template-columns: 1fr 1fr 1fr;
-                gap: 0px 80px;
+                max-width: calc(100% - 632px);
+                padding: 0 0 0 32px;
             }
+        }
 
-            .accordion-item {
-                font-family: "Corporate-S-Pro";
-                font-weight: normal;
-                font-size: 28px;
-                text-align: center;
-                color: $c-grey-1;
-
-                &:not(:last-child) {
-                    margin-bottom: 130px;
-                }
-
-                figure {
-                    margin: 0 auto 64px;
+        .sTechnical-slide {
+            .sTechnical-slide-item {
+                strong {
+                    display: block;
+                    margin-bottom: 26px;
+                    font-family: "Corporate-S";
+                    font-weight: bold;
+                    font-size: 20px;
+                    text-transform: uppercase;
+                    color: $c-black;
 
                     @media #{$media-lg} {
-                        max-width: 232px;
-                        height: 105px;
-                        margin-bottom: 40px;
+                        font-size: 15px;
                     }
+                }
 
-                    img {
+                table {
+                    width: 100%;
+                    border-collapse: separate;
+                    border-spacing: 4px 0px;
+
+                    td {
+                        padding: 9px 0;
+                        border-bottom: 1px solid #d5d5d6;
+                        font-size: 14px;
+                        line-height: 1.2;
+
                         @media #{$media-lg} {
-                            max-width: 100%;
-                            max-height: 100%;
+                            padding-top: 5px;
+                            padding-bottom: 5px;
+                            font-size: 11px;
+                        }
+
+                        &:not(:first-child) {
+                            padding-right: 4px;
+                            padding-left: 4px;
                         }
                     }
                 }
+            }
 
-                p {
-                    margin-bottom: 36px;
-                    font-size: 28px;
-                    text-align: left;
+            .slick-arrow {
+                width: 30px;
+                height: 30px;
+                top: auto;
+                bottom: -64px;
+                z-index: 1;
 
-                    @media #{$media-lg} {
-                        font-size: 18px;
-                    }
+                @media #{$media-lg} {
+                    width: 23px;
+                    height: 23px;
                 }
 
-                a {
-                    display: inline-block;
-                    padding: 15px 43px;
-                    margin: 0 auto;
-                    font-family: "Corporate-S";
-                    font-weight: bold;
-                    font-size: 19px;
-                    text-decoration: none;
-                    color: $c-white;
-                    background-color: $c-blue-1;
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-image: url("../images/icon-arrow-slide.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    opacity: 1;
+                }
+
+                &.slick-next {
+                    right: 0px;
+                }
+
+                &.slick-prev {
+                    left: 0px;
+
+                    &::before {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            .slick-dots {
+                bottom: -40px;
+
+                @media #{$media-lg} {
+                    bottom: -45px;
+                }
+
+                li {
+                    width: 50px;
+                    height: 8px;
+                    margin: 0;
 
                     @media #{$media-lg} {
-                        padding: 6px 27px;
-                        font-size: 11.5px;
+                        width: 38px;
+                        height: 6px;
+                    }
+
+                    &:not(:last-child) {
+                        margin-right: 3px;
+
+                        @media #{$media-lg} {
+                            margin-right: 4px;
+                        }
+                    }
+
+                    button {
+                        width: 50px;
+                        height: 8px;
+                        padding: 0;
+                        background-color: $c-white;
+
+                        @media #{$media-lg} {
+                            width: 38px;
+                            height: 6px;
+                        }
+
+                        &::before {
+                            content: none;
+                        }
+                    }
+
+                    &.slick-active {
+                        button {
+                            background-color: $c-blue-1;
+                        }
                     }
                 }
             }
         }
 
-        &.active {
-            .accordion-title {
-                margin-bottom: 68px;
+        .sTechnical-download {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            max-width: 300px;
+            height: 62px;
+            padding: 0px;
+            margin: 96px auto 0;
+            text-decoration: none;
+            text-align: center;
+            color: $c-white;
+            background-color: $c-blue-1;
+
+            @media #{$media-lg} {
+                max-width: 240px;
+                height: 50px;
+                margin-top: 86px;
+            }
+
+            strong,
+            span {
+                display: block;
+                font-family: "Corporate-S";
+                font-size: 19.5px;
+                text-transform: uppercase;
 
                 @media #{$media-lg} {
-                    margin-bottom: 42px;
-                }
-
-                span {
-                    &::after {
-                        content: none;
-                    }
+                    font-size: 15.4px;
                 }
             }
 
-            .accordion-body {
-                display: block;
-
-                @media #{$media-lg} {
-                    display: grid;
-                }
+            strong {
+                font-weight: bold;
             }
         }
     }
 }
 
 .sCustom {
-    padding: 56px 38px 55px;
+    padding: 32px 38px 55px;
 
     @media #{$media-lg} {
-        padding: 28px 54px 62px;
+        padding: 34px 54px 62px;
     }
 
     .sectionTitle {
@@ -1009,6 +1130,173 @@ main {
             span {
                 font-family: "Corporate-S-Pro";
                 font-weight: normal;
+            }
+        }
+    }
+}
+
+.sServices {
+    padding: 56px 38px 74px;
+    background: rgba(255, 255, 255, 1);
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
+    background: -webkit-gradient(
+        left top,
+        left bottom,
+        color-stop(0%, rgba(255, 255, 255, 1)),
+        color-stop(100%, rgba(245, 245, 245, 1))
+    );
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f5f5f5', GradientType=0 );
+
+    @media #{$media-lg} {
+        padding: 78px 54px 94px;
+    }
+
+    .sectionTitle {
+        margin-bottom: 82px;
+
+        @media #{$media-lg} {
+            margin-bottom: 92px;
+        }
+    }
+
+    .accordion {
+        &:not(:last-child) {
+            margin-bottom: 18px;
+        }
+
+        .accordion-title {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            span {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                position: relative;
+                margin-right: 12px;
+                background-color: $c-blue-1;
+
+                &::before,
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 16px;
+                    height: 4px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-top: -2px;
+                    margin-left: -8px;
+                    background-color: $c-white;
+                }
+
+                &::after {
+                    transform: rotate(90deg);
+                }
+            }
+
+            h3 {
+                font-family: "Corporate-A-Condensed";
+                font-weight: normal;
+                font-size: 45px;
+            }
+        }
+
+        .accordion-body {
+            display: none;
+
+            @media #{$media-lg} {
+                grid-auto-columns: 1fr;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 0px 80px;
+            }
+
+            .accordion-item {
+                font-family: "Corporate-S-Pro";
+                font-weight: normal;
+                font-size: 28px;
+                text-align: center;
+                color: $c-grey-1;
+
+                &:not(:last-child) {
+                    margin-bottom: 130px;
+                }
+
+                figure {
+                    margin: 0 auto 64px;
+
+                    @media #{$media-lg} {
+                        display: flex;
+                        justify-content: center;
+                        align-items: flex-end;
+                        max-width: 232px;
+                        height: 105px;
+                        margin-bottom: 40px;
+                    }
+
+                    img {
+                        @media #{$media-lg} {
+                            max-width: 100%;
+                            max-height: 100%;
+                        }
+                    }
+                }
+
+                p {
+                    margin-bottom: 36px;
+                    font-size: 28px;
+                    text-align: left;
+
+                    @media #{$media-lg} {
+                        font-size: 18px;
+                    }
+                }
+
+                a {
+                    display: inline-block;
+                    padding: 15px 43px;
+                    margin: 0 auto;
+                    font-family: "Corporate-S";
+                    font-weight: bold;
+                    font-size: 19px;
+                    text-decoration: none;
+                    color: $c-white;
+                    background-color: $c-blue-1;
+
+                    @media #{$media-lg} {
+                        padding: 6px 27px;
+                        font-size: 11.5px;
+                    }
+                }
+            }
+        }
+
+        &.active {
+            .accordion-title {
+                margin-bottom: 68px;
+
+                @media #{$media-lg} {
+                    margin-bottom: 42px;
+                }
+
+                span {
+                    &::after {
+                        content: none;
+                    }
+                }
+            }
+
+            .accordion-body {
+                display: block;
+
+                @media #{$media-lg} {
+                    display: grid;
+                }
             }
         }
     }

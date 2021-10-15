@@ -7,6 +7,7 @@ Site.Init = function () {
     Site.Accordion();
     Site.Gallery();
     Site.Footer();
+    Site.Technical();
 }
 
 Site.MainHeader = function () {
@@ -95,6 +96,19 @@ Site.Tabs = function () {
     })
 }
 
+Site.Technical = function () {
+    const technicalSlide = '#technicalSlide';
+    const technicalItem = $(`${technicalSlide}`).find('.sTechnical-slide-item');
+
+    $(`${technicalSlide}`).slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: true,
+    })
+}
+
 Site.Accordion = function () {
     const accordion = $('.accordion-title');
 
@@ -121,7 +135,6 @@ Site.Gallery = function () {
         slidesToScroll: 1,
         dots: true,
         arrows: true,
-        adaptiveHeight: true,
         responsive: [
             {
                 breakpoint: 992,
