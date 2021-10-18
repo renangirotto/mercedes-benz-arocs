@@ -1045,10 +1045,10 @@ main {
             background: rgba(242, 242, 242, 1);
 
             @media #{$media-lg} {
-               min-width: 364px;
-               max-width: 364px;
-               padding: 0;
-               background: transparent;
+                min-width: 364px;
+                max-width: 364px;
+                padding: 0;
+                background: transparent;
             }
 
             img {
@@ -1198,7 +1198,7 @@ main {
 
     .sServices-subTitle {
         margin-bottom: 54px;
-        font-family: 'Corporate-S';
+        font-family: "Corporate-S";
         font-weight: 300;
         color: $c-grey-1;
 
@@ -1260,6 +1260,10 @@ main {
                 gap: 0px 80px;
             }
 
+            &.full {
+                grid-template-columns: 1fr;
+            }
+
             .accordion-item {
                 font-family: "Corporate-S-Pro";
                 font-weight: normal;
@@ -1308,6 +1312,10 @@ main {
                     @media #{$media-lg} {
                         font-size: 18px;
                     }
+
+                    strong {
+                        font-weight: bold;
+                    }
                 }
 
                 a {
@@ -1348,7 +1356,7 @@ main {
             .accordion-body {
                 display: block;
                 margin-bottom: 100px;
-                
+
                 @media #{$media-lg} {
                     display: grid;
                     margin-bottom: 64px;
@@ -1548,11 +1556,11 @@ main {
 
     p {
         margin-bottom: 44px;
-        font-family: 'Corporate-S';
+        font-family: "Corporate-S";
         font-weight: 300;
         font-size: 28px;
         color: $c-grey-1;
-        
+
         @media #{$media-lg} {
             margin-bottom: 32px;
             font-size: 18px;
@@ -1569,7 +1577,8 @@ main {
         display: flex;
         margin-bottom: 24px;
 
-        button, a {
+        button,
+        a {
             box-sizing: border-box;
             display: flex;
             align-items: center;
@@ -1582,7 +1591,7 @@ main {
             color: $c-blue-1;
             background-color: transparent;
             cursor: pointer;
-            
+
             @media #{$media-lg} {
                 width: 100%;
                 max-width: 195px;
@@ -1591,7 +1600,6 @@ main {
             }
 
             &:not(:last-child) {
-                
                 @media #{$media-lg} {
                     margin-right: 20px;
                     font-size: 16px;
@@ -1607,23 +1615,166 @@ main {
 
     .sDealers-panels {
         .sDealers-panels-item {
+            display: none;
+
             input {
                 box-sizing: border-box;
                 width: 100%;
                 height: 64px;
                 padding: 0 24px;
                 border: 1px solid #e5e5e5;
-                font-family: 'Corporate-S';
+                font-family: "Corporate-S";
                 font-weight: 300;
                 font-size: 24px;
                 color: $c-grey-1;
                 text-transform: uppercase;
-                
+
                 @media #{$media-lg} {
                     max-width: 624px;
                     height: 50px;
                     font-size: 16px;
                 }
+            }
+
+            select {
+                -moz-appearance: none; /* Firefox */
+                -webkit-appearance: none; /* Safari and Chrome */
+                appearance: none;
+                box-sizing: border-box;
+                width: 100%;
+                height: 64px;
+                padding: 0 60px 0 24px;
+                border: 1px solid #e5e5e5;
+                font-family: "Corporate-S";
+                font-weight: 300;
+                font-size: 24px;
+                color: $c-grey-1;
+                text-transform: uppercase;
+                background-image: url("../images/icon-select-2.gif");
+                background-repeat: no-repeat;
+                background-position: right center;
+                background-size: 60px 60px;
+
+                @media #{$media-lg} {
+                    max-width: 300px;
+                    height: 50px;
+                    font-size: 16px;
+                    padding: 0 48px 0 24px;
+                    background-size: 48px 48px;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 24px;
+
+                    @media #{$media-lg} {
+                        margin-right: 24px;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            &.active {
+                display: block;
+
+                &.flex {
+                    @media #{$media-lg} {
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .sDealers-list-map {
+        display: none;
+        margin-top: 40px;
+
+        .sDealers-list {
+            box-sizing: border-box;
+            width: 100%;
+            max-height: 520px;
+            border: 1px solid #e5e5e5;
+            margin-bottom: 24px;
+            overflow: auto;
+
+            @media #{$media-lg} {
+                max-width: 470px;
+                margin-right: 24px;
+                margin-bottom: 0;
+            }
+
+            li {
+                padding: 20px;
+                position: relative;
+                font-weight: normal;
+                cursor: pointer;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid #e5e5e5;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 8px;
+                    height: 12px;
+                    position: absolute;
+                    right: 12px;
+                    top: 50%;
+                    margin-top: -6px;
+                    background-image: url("../images/icon-arrow-right.svg");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
+
+                h6 {
+                    margin-bottom: 15px;
+                    font-weight: normal;
+                    font-size: 28px;
+                    text-transform: uppercase;
+
+                    @media #{$media-lg} {
+                        font-size: 18px;
+                    }
+                }
+
+                p {
+                    margin-bottom: 5px;
+                    font-size: 28px;
+
+                    @media #{$media-lg} {
+                        font-size: 18px;
+                    }
+                }
+
+                a {
+                    font-size: 28px;
+                    color: $c-blue-1;
+                    text-decoration: none;
+
+                    @media #{$media-lg} {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
+        .sDealers-map {
+            width: 100%;
+
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        &.active {
+            display: block;
+
+            @media #{$media-lg} {
+                display: flex;
             }
         }
     }
@@ -1893,6 +2044,46 @@ main {
             position: relative;
         }
 
+        .modal-text {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            position: absolute;
+            overflow: auto;
+            font-family: "Corporate-S";
+            background-color: $c-white;
+
+            p {
+                margin-bottom: 10px;
+            }
+
+            strong {
+                font-weight: bold;
+            }
+
+            table {
+                margin: 5px;
+                background-color: #fff;
+                color: #000;
+                font-size: 12px;
+                text-align: left;
+
+                th {
+                    background-color: #ccc;
+                    text-align: center;
+                    border: 1px solid #777;
+                    font-weight: bold;
+                    padding: 10px;
+                }
+
+                td {
+                    border: 1px solid #ccc;
+                    padding: 10px;
+                }
+            }
+        }
+
         .modal-video {
             position: absolute;
             width: 100%;
@@ -1929,7 +2120,94 @@ main {
         }
     }
 
+    &.text {
+        .modal-container {
+            box-sizing: border-box;
+            padding: 0 120px 0 70px;
+
+            @media #{$media-lg} {
+                padding: 0;
+            }
+
+            .modal-player-image {
+                padding: 0;
+                height: 90vh;
+
+                @media #{$media-lg} {
+                    height: 0;
+                    padding-bottom: 56.25%;
+                }
+            }
+
+            .modal-close {
+                width: 64px;
+                height: 64px;
+                padding: 0;
+                border: none;
+                position: absolute;
+                top: 0px;
+                right: -84px;
+                font-size: 48px;
+                background-color: #ececec;
+                cursor: pointer;
+
+                @media #{$media-lg} {
+                    width: 40px;
+                    height: 40px;
+                    top: 0px;
+                    right: -56px;
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+
     &.active {
         display: block;
+    }
+}
+
+.cookies {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    &.hidden {
+        display: none;
+    }
+
+    .container {
+        box-sizing: border-box;
+        padding: 20px 30px;
+        box-shadow: 0 0 1px;
+        background-color: $c-white;
+        font-weight: 600;
+        color: $c-grey-1;
+
+        span {
+            font-size: 18px;
+        }
+
+        p {
+            margin: 16px 0 0 0;
+            font-size: 12px;
+
+            a {
+                text-decoration: none;
+                color: $c-blue-1;
+            }
+        }
+
+        button {
+            padding: 6px 12px;
+            border: none;
+            margin-top: 16px;
+            font-size: 0.75rem;
+            color: $c-white;
+            background-color: $c-blue-1;
+        }
     }
 }
