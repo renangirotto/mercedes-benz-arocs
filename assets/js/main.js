@@ -233,26 +233,27 @@ Site.Dealers.RequestStates = function (apiBase) {
     const requestStates = fetch(`${apiBase}/get-dealers-external?type=states`);
     const statesSelect = '#dealersState'
 
-    requestStates.then(
-        response => {
-            response.States.forEach(function (item) {
-                const state = item
+    requestStates
+        .then(function (response) {
+            response.json().then(function (result) {
+                result.States.forEach(function (item) {
+                    const state = item
 
-                $(`${statesSelect}`).append(
-                    $('<option>').val(state.Name).text(state.Name)
-                )
-            })
+                    $(`${statesSelect}`).append(
+                        $('<option>').val(state.Name).text(state.Name)
+                    )
+                })
 
-            $(`${statesSelect}`).on('change', function () {
-                const state = $(`${statesSelect} option:selected`).val();
+                $(`${statesSelect}`).on('change', function () {
+                    const state = $(`${statesSelect} option:selected`).val();
 
-                Site.Dealers.RequestCities(apiBase, state);
-            })
-        },
-        error => {
-            console.log({ error });
-        }
-    )
+                    Site.Dealers.RequestCities(apiBase, state);
+                })
+            }),
+                function (error) {
+                    console.log({ error });
+                }
+        })
 
     // let States = [
     //     {
@@ -361,11 +362,11 @@ Site.Dealers.RequestCities = function (apiBase, state) {
     if (state !== 'selecione') {
         const requestCities = fetch(`${apiBase}/get-dealers-external?type=cities&state=${state}`);
 
-        requestCities.then(
-            response => {
+        requestCities.then(function (response) {
+            response.json().then(function (result) {
                 $(`${citySelect} option`).remove();
 
-                response.Cities.forEach(function (item) {
+                result.Cities.forEach(function (item) {
                     const city = item
 
                     $(`${citySelect}`).append(
@@ -376,17 +377,17 @@ Site.Dealers.RequestCities = function (apiBase, state) {
                 $(`${citySelect}`).on('change', function () {
                     const city = $(`${citySelect} option:selected`).val();
 
-                    if (city === 'selecione') {     
+                    if (city === 'selecione') {
                         $(`${dealers}`).parent().removeClass('active');
                     } else {
                         Site.Dealers.RequestDealerByStateAndCity(apiBase, state, city);
                     }
                 })
-            },
-            error => {
-                console.log({ error });
-            }
-        )
+            }),
+                function (error) {
+                    console.log({ error });
+                }
+        })
 
         // Cities = [
         //     {
@@ -439,14 +440,14 @@ Site.Dealers.RequestCities = function (apiBase, state) {
 Site.Dealers.RequestDealerByCep = function (apiBase, cepValue) {
     const requestByCep = fetch(`${apiBase}/get-dealers-external?type=dealers&zipCode=${cepValue}`);
 
-    requestByCep.then(
-        response => {
-            Site.Dealers.BuildDealersList(response.Dealers);
-        },
-        error => {
-            console.log({error});
-        }
-    )
+    requestByCep.then(function (response) {
+        response.json().then(function (result) {
+            Site.Dealers.BuildDealersList(result.Dealers);
+        }),
+            function (error) {
+                console.log({ error });
+            }
+    })
 
     // let Dealers = [
     //     {
@@ -571,14 +572,14 @@ Site.Dealers.RequestDealerByCep = function (apiBase, cepValue) {
 Site.Dealers.RequestDealerByStateAndCity = function (apiBase, state, city) {
     const requestByStateAndCity = fetch(`${apiBase}/get-dealers-external?type=dealers&state=${state}&city=${city}`);
 
-    requestByStateAndCity.then(
-        response => {
-            Site.Dealers.BuildDealersList(response.Dealers);
-        },
-        error => {
-            console.log({error});
+    requestByStateAndCity.then(function (response) {
+        response.json().then(function (result) {
+            Site.Dealers.BuildDealersList(result.Dealers);
+        }),
+        function (error) {
+            console.log({ error });
         }
-    )
+    })
 
     // let Dealers = [
     //     {
@@ -774,7 +775,7 @@ Site.Footer = function () {
 
         modalCookies.addClass('active');
 
-        modalCookies.find('.modal-close').on('click', function(){
+        modalCookies.find('.modal-close').on('click', function () {
             modalCookies.removeClass('active')
             $('body').removeClass('no-scroll');
         })
@@ -786,7 +787,7 @@ Site.Footer = function () {
 
         modalPrivacity.addClass('active');
 
-        modalPrivacity.find('.modal-close').on('click', function(){
+        modalPrivacity.find('.modal-close').on('click', function () {
             modalPrivacity.removeClass('active')
             $('body').removeClass('no-scroll');
         })
@@ -798,7 +799,7 @@ Site.Footer = function () {
 
         modalNotification.addClass('active');
 
-        modalNotification.find('.modal-close').on('click', function(){
+        modalNotification.find('.modal-close').on('click', function () {
             modalNotification.removeClass('active')
             $('body').removeClass('no-scroll');
         })
