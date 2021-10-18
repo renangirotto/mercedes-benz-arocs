@@ -79,7 +79,7 @@ main {
     top: 0;
     right: 0;
     left: 0;
-    z-index: 1;
+    z-index: 5;
     background-color: $c-black;
 
     .mainHeader-topbar {
@@ -392,7 +392,7 @@ main {
         right: 0;
         bottom: 0;
         left: 0;
-        z-index: 3;
+        z-index: 10;
         background-color: rgba(0, 0, 0, 0.9);
 
         .sBanner-modal-container {
@@ -1019,67 +1019,100 @@ main {
 }
 
 .sCustom {
-    padding: 32px 38px 55px;
+    padding: 0 0 77px;
 
     @media #{$media-lg} {
-        padding: 34px 54px 62px;
+        padding: 34px 54px 40px;
     }
 
     .sectionTitle {
         margin-bottom: 60px;
 
         @media #{$media-lg} {
-            margin-bottom: 50px;
+            margin-bottom: 36px;
         }
     }
 
-    p {
-        margin-bottom: 52px;
-        font-family: "Corporate-S";
-        font-weight: 300;
-        font-size: 28px;
-        color: $c-grey-1;
-
+    .sCustom-container {
         @media #{$media-lg} {
-            margin-bottom: 30px;
-            font-size: 18px;
-        }
-    }
-
-    ul {
-        padding-left: 30px;
-        list-style: initial;
-        font-family: "Corporate-S";
-        font-weight: 300;
-        font-size: 36.27px;
-        line-height: 1.5;
-        color: $c-grey-1;
-
-        @media #{$media-lg} {
-            padding-left: 20px;
-            font-size: 20px;
+            display: flex;
         }
 
-        li {
-            &::marker {
-                color: $c-blue-1;
+        figure {
+            box-sizing: border-box;
+            max-width: 735px;
+            padding: 32px 38px 80px;
+            background: rgba(242, 242, 242, 1);
+
+            @media #{$media-lg} {
+               min-width: 364px;
+               max-width: 364px;
+               padding: 0;
+               background: transparent;
+            }
+
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .sCustom-text {
+            padding: 64px 34px 0px;
+
+            @media #{$media-lg} {
+                padding: 26px 0 0 70px;
+            }
+
+            p {
+                margin-bottom: 52px;
+                font-family: "Corporate-S";
+                font-weight: 300;
+                font-size: 28px;
+                color: $c-grey-1;
+
+                @media #{$media-lg} {
+                    margin-bottom: 15px;
+                    font-size: 18px;
+                }
+            }
+
+            ul {
+                padding-left: 30px;
+                list-style: initial;
+                font-family: "Corporate-S";
+                font-weight: 300;
+                font-size: 36.27px;
+                line-height: 1.5;
+                color: $c-grey-1;
+
+                @media #{$media-lg} {
+                    padding-left: 20px;
+                    font-size: 20px;
+                }
+
+                li {
+                    &::marker {
+                        color: $c-blue-1;
+                    }
+                }
             }
         }
     }
 }
 
 .sTag {
-    padding: 55px 38px 96px;
+    padding: 77px 34px 96px;
 
     @media #{$media-lg} {
-        padding: 62px 54px 150px;
+        padding: 40px 54px 80px;
     }
 
     .sectionTitle {
-        margin-bottom: 52px;
+        margin-bottom: 44px;
 
         @media #{$media-lg} {
-            margin-bottom: 40px;
+            margin-bottom: 34px;
         }
     }
 
@@ -1136,30 +1169,41 @@ main {
 }
 
 .sServices {
-    padding: 56px 38px 74px;
+    padding: 60px 38px 74px;
     background: rgba(255, 255, 255, 1);
-    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
-    background: -webkit-gradient(
-        left top,
-        left bottom,
-        color-stop(0%, rgba(255, 255, 255, 1)),
-        color-stop(100%, rgba(245, 245, 245, 1))
-    );
-    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
-    background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
-    background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f5f5f5', GradientType=0 );
+    // background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
+    // background: -webkit-gradient(
+    //     left top,
+    //     left bottom,
+    //     color-stop(0%, rgba(255, 255, 255, 1)),
+    //     color-stop(100%, rgba(245, 245, 245, 1))
+    // );
+    // background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
+    // background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
+    // background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
+    // background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f5f5f5', GradientType=0 );
 
     @media #{$media-lg} {
         padding: 78px 54px 94px;
     }
 
     .sectionTitle {
-        margin-bottom: 82px;
+        margin-bottom: 52px;
 
         @media #{$media-lg} {
-            margin-bottom: 92px;
+            margin-bottom: 46px;
+        }
+    }
+
+    .sServices-subTitle {
+        margin-bottom: 54px;
+        font-family: 'Corporate-S';
+        font-weight: 300;
+        color: $c-grey-1;
+
+        @media #{$media-lg} {
+            margin-bottom: 32px;
         }
     }
 
@@ -1223,8 +1267,17 @@ main {
                 text-align: center;
                 color: $c-grey-1;
 
+                @media #{$media-lg} {
+                    display: flex;
+                    flex-direction: column;
+                }
+
                 &:not(:last-child) {
                     margin-bottom: 130px;
+
+                    @media #{$media-lg} {
+                        margin-bottom: 0;
+                    }
                 }
 
                 figure {
@@ -1234,8 +1287,8 @@ main {
                         display: flex;
                         justify-content: center;
                         align-items: flex-end;
-                        max-width: 232px;
-                        height: 105px;
+                        max-width: 320px;
+                        height: 132px;
                         margin-bottom: 40px;
                     }
 
@@ -1260,7 +1313,7 @@ main {
                 a {
                     display: inline-block;
                     padding: 15px 43px;
-                    margin: 0 auto;
+                    margin: auto auto 0;
                     font-family: "Corporate-S";
                     font-weight: bold;
                     font-size: 19px;
@@ -1270,6 +1323,7 @@ main {
 
                     @media #{$media-lg} {
                         padding: 6px 27px;
+                        margin-top: auto;
                         font-size: 11.5px;
                     }
                 }
@@ -1293,9 +1347,11 @@ main {
 
             .accordion-body {
                 display: block;
-
+                margin-bottom: 100px;
+                
                 @media #{$media-lg} {
                     display: grid;
+                    margin-bottom: 64px;
                 }
             }
         }
@@ -1350,6 +1406,7 @@ main {
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            cursor: pointer;
 
             @media #{$media-lg} {
                 height: 637px;
@@ -1359,7 +1416,6 @@ main {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                cursor: pointer;
 
                 &::after {
                     content: "";
@@ -1469,6 +1525,104 @@ main {
                     button {
                         background-color: $c-blue-1;
                     }
+                }
+            }
+        }
+    }
+}
+
+.sDealers {
+    padding: 80px 34px 90px;
+
+    @media #{$media-lg} {
+        padding: 64px 54px 115px;
+    }
+
+    .sectionTitle {
+        margin-bottom: 72px;
+
+        @media #{$media-lg} {
+            margin-bottom: 64px;
+        }
+    }
+
+    p {
+        margin-bottom: 44px;
+        font-family: 'Corporate-S';
+        font-weight: 300;
+        font-size: 28px;
+        color: $c-grey-1;
+        
+        @media #{$media-lg} {
+            margin-bottom: 32px;
+            font-size: 18px;
+        }
+
+        a {
+            font-weight: 500;
+            text-decoration: none;
+            color: $c-blue-1;
+        }
+    }
+
+    .sDealers-tabs {
+        display: flex;
+        margin-bottom: 24px;
+
+        button, a {
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 20px;
+            border: 1px solid $c-blue-1;
+            font-size: 28px;
+            text-decoration: none;
+            text-align: center;
+            color: $c-blue-1;
+            background-color: transparent;
+            cursor: pointer;
+            
+            @media #{$media-lg} {
+                width: 100%;
+                max-width: 195px;
+                padding: 15px 10px;
+                font-size: 16px;
+            }
+
+            &:not(:last-child) {
+                
+                @media #{$media-lg} {
+                    margin-right: 20px;
+                    font-size: 16px;
+                }
+            }
+
+            &.active {
+                color: $c-white;
+                background-color: $c-blue-1;
+            }
+        }
+    }
+
+    .sDealers-panels {
+        .sDealers-panels-item {
+            input {
+                box-sizing: border-box;
+                width: 100%;
+                height: 64px;
+                padding: 0 24px;
+                border: 1px solid #e5e5e5;
+                font-family: 'Corporate-S';
+                font-weight: 300;
+                font-size: 24px;
+                color: $c-grey-1;
+                text-transform: uppercase;
+                
+                @media #{$media-lg} {
+                    max-width: 624px;
+                    height: 50px;
+                    font-size: 16px;
                 }
             }
         }
@@ -1708,5 +1862,74 @@ main {
                 }
             }
         }
+    }
+}
+
+.modal {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.9);
+
+    .modal-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 1178px;
+        height: 100%;
+        margin: 0 auto;
+
+        .modal-player-image {
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+
+        .modal-video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: $c-black;
+        }
+
+        .modal-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: $c-black;
+        }
+
+        .modal-close {
+            width: 64px;
+            height: 64px;
+            padding: 0;
+            border: none;
+            position: absolute;
+            top: -80px;
+            right: 16px;
+            font-size: 48px;
+            background-color: #ececec;
+            cursor: pointer;
+
+            @media #{$media-lg} {
+                width: 40px;
+                height: 40px;
+                top: 0px;
+                right: -56px;
+                font-size: 32px;
+            }
+        }
+    }
+
+    &.active {
+        display: block;
     }
 }

@@ -5,9 +5,11 @@ Site.Init = function () {
     Site.Banner();
     Site.Tabs();
     Site.Accordion();
-    Site.Gallery();
-    Site.Footer();
     Site.Technical();
+    Site.Gallery();
+    Site.Dealers();
+    Site.Footer();
+    Site.ModalClose();
 }
 
 Site.MainHeader = function () {
@@ -51,7 +53,7 @@ Site.Banner = function (close = false) {
     const modal = $('#sBannerModal');
     const videoId = modal.attr('data-video')
 
-    buttonModal.on('click', function(){
+    buttonModal.on('click', function () {
         modal.find('iframe')[0].src = `https://www.youtube-nocookie.com/embed/${videoId}`
         modal.addClass('active');
     })
@@ -67,19 +69,19 @@ Site.Tabs = function () {
     const tabs = '.sFeatures-tabs-item';
     const panels = '.sFeatures-panel-item';
 
-    $(`${selectMobile}`).on('change', function() {
+    $(`${selectMobile}`).on('change', function () {
         const selectedTab = $(`${selectMobile} option:selected`).val();
 
         $(`${panels}`).removeClass('active');
 
-        $(`${panels}`).each(function() {
+        $(`${panels}`).each(function () {
             if ($(this).attr('data-panel') === selectedTab) {
                 $(this).addClass('active')
             }
         })
     })
 
-    $(`${tabs}`).on('click', function() {
+    $(`${tabs}`).on('click', function () {
         const selectedTab = $(this).attr('data-tab');
 
         $(`${tabs}`).removeClass('active');
@@ -88,7 +90,7 @@ Site.Tabs = function () {
 
         $(`${panels}`).removeClass('active');
 
-        $(`${panels}`).each(function() {
+        $(`${panels}`).each(function () {
             if ($(this).attr('data-panel') === selectedTab) {
                 $(this).addClass('active')
             }
@@ -128,6 +130,7 @@ Site.Accordion = function () {
 Site.Gallery = function () {
     const gallerySlide = '#gallerySlide'
     const galleryItem = $(`${gallerySlide}`).find('.sGallery-item');
+    const modal = $('#modal');
 
     $(`${gallerySlide}`).slick({
         infinite: true,
@@ -151,35 +154,49 @@ Site.Gallery = function () {
         if (item.hasClass('video')) {
             const videoId = item.attr('data-video');
 
-            /// 2. This code loads the IFrame Player API code asynchronously.
-            var tag = document.createElement('script');
+            modal.find('.modal-player-image').append(
+                $('<iframe>').attr({
+                    class: 'modal-video',
+                    src: `https://www.youtube-nocookie.com/embed/${videoId}`,
+                    frameborder: "0",
+                    allowfullscreen: "allowfullscreen"
+                })
+            )
 
-            tag.src = "https://www.youtube.com/iframe_api";
-            var firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            modal.addClass('active');
+        }
 
-            // 3. This function creates an <iframe> (and YouTube player)
-            //    after the API code downloads.
-            var player;
-            function onYouTubeIframeAPIReady() {
-                player = new YT.Player('player', {
-                    videoId: videoId,
-                    playerVars: {
-                        'playsinline': 1
-                    },
-                    events: {
-                        'onReady': onPlayerReady
-                    }
-                });
-            }
+        if (!item.hasClass('video')) {
+            const imgId = item.attr('data-image');
 
-            // 4. The API will call this function when the video player is ready.
-            function onPlayerReady(event) {
-                event.target.playVideo();
-            }
+            modal.find('.modal-player-image').append(
+                $('<img>').attr({
+                    class: 'modal-image',
+                    src: `./assets/images/galeria/${imgId}.jpg`,
+                })
+            )
 
-            item.addClass('playing');
-            onYouTubeIframeAPIReady();
+            modal.addClass('active');
+        }
+    })
+}
+
+Site.Dealers = function () {
+    const cepField = '#cepDealer';
+
+    $(`${cepField}`).mask('00000-000');
+
+    $(`${cepField}`).on("input", function() {
+        const cepValue = this.value
+
+        if (cepValue.length === 9) {
+            const requestByCep = fetch('https://vempramercedes.com.br/api/get-dealers-external?type=dealers&zipCode=02856100');
+
+            requestByCep.then(
+                response => {
+                    console.log(response)
+                }
+            )
         }
     })
 }
@@ -191,6 +208,16 @@ Site.Footer = function () {
         let body = $("html, body");
         body.stop().animate({ scrollTop: 0 }, 500);
     })
+}
+
+Site.ModalClose = function (close = false) {
+    const modal = $('#modal');
+
+    if (close) {
+        modal.removeClass('active');
+        modal.find('.modal-video').remove();
+        modal.find('.modal-image').remove();
+    }
 }
 
 $(document).ready(function () {
