@@ -674,6 +674,11 @@ main {
                 @media #{$media-lg} {
                     max-height: 542px;
                 }
+
+                img {
+                    display: block;
+                    width: 100%;
+                }
             }
 
             .text {
@@ -1041,7 +1046,7 @@ main {
 
         figure {
             box-sizing: border-box;
-            max-width: 735px;
+            width: 100%;
             padding: 32px 38px 80px;
             background: rgba(242, 242, 242, 1);
 

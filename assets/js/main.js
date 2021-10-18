@@ -11,6 +11,11 @@ Site.Init = function () {
     Site.Footer();
     Site.ModalClose();
     Site.Cookies();
+
+    viewport = document.querySelectorAll("meta[name=viewport]");
+    viewport.forEach(function (element) {
+        element.setAttribute('content', 'width=750, user-scalable=no');
+    })
 }
 
 Site.MainHeader = function () {
@@ -254,104 +259,6 @@ Site.Dealers.RequestStates = function (apiBase) {
                     console.log({ error });
                 }
         })
-
-    // let States = [
-    //     {
-    //         "Name": "AC"
-    //     },
-    //     {
-    //         "Name": "AL"
-    //     },
-    //     {
-    //         "Name": "AM"
-    //     },
-    //     {
-    //         "Name": "AP"
-    //     },
-    //     {
-    //         "Name": "BA"
-    //     },
-    //     {
-    //         "Name": "CE"
-    //     },
-    //     {
-    //         "Name": "DF"
-    //     },
-    //     {
-    //         "Name": "ES"
-    //     },
-    //     {
-    //         "Name": "GO"
-    //     },
-    //     {
-    //         "Name": "MA"
-    //     },
-    //     {
-    //         "Name": "MG"
-    //     },
-    //     {
-    //         "Name": "MS"
-    //     },
-    //     {
-    //         "Name": "MT"
-    //     },
-    //     {
-    //         "Name": "PA"
-    //     },
-    //     {
-    //         "Name": "PB"
-    //     },
-    //     {
-    //         "Name": "PE"
-    //     },
-    //     {
-    //         "Name": "PI"
-    //     },
-    //     {
-    //         "Name": "PR"
-    //     },
-    //     {
-    //         "Name": "RJ"
-    //     },
-    //     {
-    //         "Name": "RN"
-    //     },
-    //     {
-    //         "Name": "RO"
-    //     },
-    //     {
-    //         "Name": "RR"
-    //     },
-    //     {
-    //         "Name": "RS"
-    //     },
-    //     {
-    //         "Name": "SC"
-    //     },
-    //     {
-    //         "Name": "SE"
-    //     },
-    //     {
-    //         "Name": "SP"
-    //     },
-    //     {
-    //         "Name": "TO"
-    //     }
-    // ]
-
-    // States.forEach(function (item) {
-    //     const state = item
-
-    //     $(`${statesSelect}`).append(
-    //         $('<option>').val(state.Name).text(state.Name)
-    //     )
-    // })
-
-    // $(`${statesSelect}`).on('change', function () {
-    //     const state = $(`${statesSelect} option:selected`).val();
-
-    //     Site.Dealers.RequestCities(apiBase, state);
-    // })
 }
 
 Site.Dealers.RequestCities = function (apiBase, state) {
@@ -388,42 +295,6 @@ Site.Dealers.RequestCities = function (apiBase, state) {
                     console.log({ error });
                 }
         })
-
-        // Cities = [
-        //     {
-        //         "Name": "ADAMANTINA"
-        //     },
-        //     {
-        //         "Name": "ADOLFO"
-        //     },
-        //     {
-        //         "Name": "AGUAI"
-        //     },
-        //     {
-        //         "Name": "AGUAS DA PRATA"
-        //     },
-        //     {
-        //         "Name": "AGUAS DE LINDOIA"
-        //     }
-        // ]
-
-        // Cities.forEach(function (item) {
-        //     const state = item
-
-        //     $(`${citySelect}`).append(
-        //         $('<option>').val(state.Name).text(state.Name)
-        //     )
-
-        //     $(`${citySelect}`).on('change', function () {
-        //         const city = $(`${citySelect} option:selected`).val();
-
-        //         if (city === 'selecione') {
-        //             $(`${dealers}`).parent().removeClass('active');
-        //         } else {
-        //             Site.Dealers.RequestDealerByStateAndCity(apiBase, state, city);
-        //         }
-        //     })
-        // })
     }
 
     if (state === 'selecione') {
@@ -448,125 +319,6 @@ Site.Dealers.RequestDealerByCep = function (apiBase, cepValue) {
                 console.log({ error });
             }
     })
-
-    // let Dealers = [
-    //     {
-    //         "LegacyID": "21139000",
-    //         "FriendlyName": "AGRICOL",
-    //         "CompanyName": "AGRICOL DIESEL LTDA.",
-    //         "Address": "Rua Almirante Pestana, 76 - Vila Monumento",
-    //         "Location": "SÃO PAULO - SP - 01552-060",
-    //         "ZipCode": "01552-060",
-    //         "City": "SÃO PAULO",
-    //         "State": "SP",
-    //         "OperationalArea": "SAO PAULO",
-    //         "Phone": "(011) 3275-2345",
-    //         "Fax": "(011) 3275-2345",
-    //         "Email1": "agricol@agricol.com.br",
-    //         "WebSite": "http://www.agricol.com.br",
-    //         "Coordinate": {
-    //             "Latitude": "-23.56775",
-    //             "Longitude": "-46.60971"
-    //         }
-    //     },
-    //     {
-    //         "LegacyID": "22654000",
-    //         "FriendlyName": "BESSER CAMINHÕES",
-    //         "CompanyName": "DIVENA COMERCIAL LTDA",
-    //         "Address": "Av. Piracema, 250 - Tamboré - Barueri",
-    //         "Location": "SÃO PAULO - SP - 06460-030",
-    //         "ZipCode": "06460-030",
-    //         "City": "SÃO PAULO",
-    //         "State": "SP",
-    //         "OperationalArea": "SAO PAULO",
-    //         "Phone": "(011) 4133-4133",
-    //         "Fax": "(011) 4195-0010",
-    //         "Email1": "vendas.caminhoes@divena.com.br",
-    //         "WebSite": "",
-    //         "Coordinate": {
-    //             "Latitude": "-23.509019",
-    //             "Longitude": "-46.831883"
-    //         }
-    //     },
-    //     {
-    //         "LegacyID": "23290000",
-    //         "FriendlyName": "COMERCIAL DE NIGRIS",
-    //         "CompanyName": "COMERCIAL DE VEÍCULOS DE NIGRIS LTDA.",
-    //         "Address": "Av. Dr. Rudge Ramos, 859 - Rudge Ramos",
-    //         "Location": "SÃO BERNARDO DO CAMPO - SP - 09639-000",
-    //         "ZipCode": "09639-000",
-    //         "City": "SÃO BERNARDO DO CAMPO",
-    //         "State": "SP",
-    //         "OperationalArea": "SAO PAULO",
-    //         "Phone": "(011) 4366-8000",
-    //         "Fax": "(011) 4368-8000",
-    //         "Email1": "sacsbc@denigris.com.br",
-    //         "WebSite": "http://www.denigris.com.br",
-    //         "Coordinate": {
-    //             "Latitude": "-23.648878",
-    //             "Longitude": "-46.578673"
-    //         }
-    //     },
-    //     {
-    //         "LegacyID": "21811000",
-    //         "FriendlyName": "DE NIGRIS",
-    //         "CompanyName": "DE NIGRIS DISTRIBUIDORA DE VEÍCULOS LTDA.",
-    //         "Address": "Av. Otaviano Alves de Lima, 2600 - Limão",
-    //         "Location": "SÃO PAULO - SP - 02701-000",
-    //         "ZipCode": "02701-000",
-    //         "City": "SÃO PAULO",
-    //         "State": "SP",
-    //         "OperationalArea": "SAO PAULO",
-    //         "Phone": "(011) 3933-9000",
-    //         "Fax": "(011) 3933-9000",
-    //         "Email1": "faleconosco@denigris.com.br",
-    //         "WebSite": "http://www.denigris.com.br",
-    //         "Coordinate": {
-    //             "Latitude": "-23.510772",
-    //             "Longitude": "-46.680491"
-    //         }
-    //     },
-    //     {
-    //         "LegacyID": "25020140",
-    //         "FriendlyName": "DE NIGRIS",
-    //         "CompanyName": "DE NIGRIS DISTRIBUIDORA DE VEÍCULOS LTDA.",
-    //         "Address": "Av. Eduardo Froner, 1070 - Jardim Albertina",
-    //         "Location": "GUARULHOS - SP - 07243-590",
-    //         "ZipCode": "07243-590",
-    //         "City": "GUARULHOS",
-    //         "State": "SP",
-    //         "OperationalArea": "SAO PAULO",
-    //         "Phone": "(011) 2461-9000",
-    //         "Fax": "(011) 2461-9000",
-    //         "Email1": "guarulhos@denigris.com.br",
-    //         "WebSite": "http://www.denigris.com.br",
-    //         "Coordinate": {
-    //             "Latitude": "-23.43357",
-    //             "Longitude": "-46.407978"
-    //         }
-    //     },
-    //     {
-    //         "LegacyID": "2A064920",
-    //         "FriendlyName": "RODOBENS VEÍCULOS COMERCIAIS SP",
-    //         "CompanyName": "RODOBENS VEÍCULOS COMERCIAIS SP S.A.",
-    //         "Address": "Rua Pref. Gabriel José Antônio (Marginal Rod. Presidente Dutra), Nº 250 - Vila da Palmeiras",
-    //         "Location": "GUARULHOS - SP - 07024-120",
-    //         "ZipCode": "07024-120",
-    //         "City": "GUARULHOS",
-    //         "State": "SP",
-    //         "OperationalArea": "SAO PAULO",
-    //         "Phone": "(011) 2187-4500",
-    //         "Fax": "(011) 2187-4507",
-    //         "Email1": "veiculoscomerciais@rodobens.com.br",
-    //         "WebSite": "https://sites.rodobens.com.br/veiculoscomerciais/",
-    //         "Coordinate": {
-    //             "Latitude": "-23.480908",
-    //             "Longitude": "-46534867"
-    //         }
-    //     }
-    // ]
-
-    // Site.Dealers.BuildDealersList(Dealers)
 }
 
 Site.Dealers.RequestDealerByStateAndCity = function (apiBase, state, city) {
@@ -576,133 +328,16 @@ Site.Dealers.RequestDealerByStateAndCity = function (apiBase, state, city) {
         response.json().then(function (result) {
             Site.Dealers.BuildDealersList(result.Dealers);
         }),
-        function (error) {
-            console.log({ error });
-        }
+            function (error) {
+                console.log({ error });
+            }
     })
-
-    // let Dealers = [
-    //     {
-    //         "LegacyID": "21139000",
-    //         "FriendlyName": "AGRICOL",
-    //         "CompanyName": "AGRICOL DIESEL LTDA.",
-    //         "Address": "Rua Almirante Pestana, 76 - Vila Monumento",
-    //         "Location": "SÃO PAULO - SP - 01552-060",
-    //         "ZipCode": "01552-060",
-    //         "City": "SÃO PAULO",
-    //         "State": "SP",
-    //         "OperationalArea": "SAO PAULO",
-    //         "Phone": "(011) 3275-2345",
-    //         "Fax": "(011) 3275-2345",
-    //         "Email1": "agricol@agricol.com.br",
-    //         "WebSite": "http://www.agricol.com.br",
-    //         "Coordinate": {
-    //             "Latitude": "-23.56775",
-    //             "Longitude": "-46.60971"
-    //         }
-    //     },
-    //     {
-    //         "LegacyID": "22654000",
-    //         "FriendlyName": "BESSER CAMINHÕES",
-    //         "CompanyName": "DIVENA COMERCIAL LTDA",
-    //         "Address": "Av. Piracema, 250 - Tamboré - Barueri",
-    //         "Location": "SÃO PAULO - SP - 06460-030",
-    //         "ZipCode": "06460-030",
-    //         "City": "SÃO PAULO",
-    //         "State": "SP",
-    //         "OperationalArea": "SAO PAULO",
-    //         "Phone": "(011) 4133-4133",
-    //         "Fax": "(011) 4195-0010",
-    //         "Email1": "vendas.caminhoes@divena.com.br",
-    //         "WebSite": "",
-    //         "Coordinate": {
-    //             "Latitude": "-23.509019",
-    //             "Longitude": "-46.831883"
-    //         }
-    //     },
-    //     {
-    //         "LegacyID": "23290000",
-    //         "FriendlyName": "COMERCIAL DE NIGRIS",
-    //         "CompanyName": "COMERCIAL DE VEÍCULOS DE NIGRIS LTDA.",
-    //         "Address": "Av. Dr. Rudge Ramos, 859 - Rudge Ramos",
-    //         "Location": "SÃO BERNARDO DO CAMPO - SP - 09639-000",
-    //         "ZipCode": "09639-000",
-    //         "City": "SÃO BERNARDO DO CAMPO",
-    //         "State": "SP",
-    //         "OperationalArea": "SAO PAULO",
-    //         "Phone": "(011) 4366-8000",
-    //         "Fax": "(011) 4368-8000",
-    //         "Email1": "sacsbc@denigris.com.br",
-    //         "WebSite": "http://www.denigris.com.br",
-    //         "Coordinate": {
-    //             "Latitude": "-23.648878",
-    //             "Longitude": "-46.578673"
-    //         }
-    //     },
-    //     {
-    //         "LegacyID": "21811000",
-    //         "FriendlyName": "DE NIGRIS",
-    //         "CompanyName": "DE NIGRIS DISTRIBUIDORA DE VEÍCULOS LTDA.",
-    //         "Address": "Av. Otaviano Alves de Lima, 2600 - Limão",
-    //         "Location": "SÃO PAULO - SP - 02701-000",
-    //         "ZipCode": "02701-000",
-    //         "City": "SÃO PAULO",
-    //         "State": "SP",
-    //         "OperationalArea": "SAO PAULO",
-    //         "Phone": "(011) 3933-9000",
-    //         "Fax": "(011) 3933-9000",
-    //         "Email1": "faleconosco@denigris.com.br",
-    //         "WebSite": "http://www.denigris.com.br",
-    //         "Coordinate": {
-    //             "Latitude": "-23.510772",
-    //             "Longitude": "-46.680491"
-    //         }
-    //     },
-    //     {
-    //         "LegacyID": "25020140",
-    //         "FriendlyName": "DE NIGRIS",
-    //         "CompanyName": "DE NIGRIS DISTRIBUIDORA DE VEÍCULOS LTDA.",
-    //         "Address": "Av. Eduardo Froner, 1070 - Jardim Albertina",
-    //         "Location": "GUARULHOS - SP - 07243-590",
-    //         "ZipCode": "07243-590",
-    //         "City": "GUARULHOS",
-    //         "State": "SP",
-    //         "OperationalArea": "SAO PAULO",
-    //         "Phone": "(011) 2461-9000",
-    //         "Fax": "(011) 2461-9000",
-    //         "Email1": "guarulhos@denigris.com.br",
-    //         "WebSite": "http://www.denigris.com.br",
-    //         "Coordinate": {
-    //             "Latitude": "-23.43357",
-    //             "Longitude": "-46.407978"
-    //         }
-    //     },
-    //     {
-    //         "LegacyID": "2A064920",
-    //         "FriendlyName": "RODOBENS VEÍCULOS COMERCIAIS SP",
-    //         "CompanyName": "RODOBENS VEÍCULOS COMERCIAIS SP S.A.",
-    //         "Address": "Rua Pref. Gabriel José Antônio (Marginal Rod. Presidente Dutra), Nº 250 - Vila da Palmeiras",
-    //         "Location": "GUARULHOS - SP - 07024-120",
-    //         "ZipCode": "07024-120",
-    //         "City": "GUARULHOS",
-    //         "State": "SP",
-    //         "OperationalArea": "SAO PAULO",
-    //         "Phone": "(011) 2187-4500",
-    //         "Fax": "(011) 2187-4507",
-    //         "Email1": "veiculoscomerciais@rodobens.com.br",
-    //         "WebSite": "https://sites.rodobens.com.br/veiculoscomerciais/",
-    //         "Coordinate": {
-    //             "Latitude": "-23.480908",
-    //             "Longitude": "-46534867"
-    //         }
-    //     }
-    // ]
-
-    // Site.Dealers.BuildDealersList(Dealers)
 }
 
 Site.Dealers.BuildDealersList = function (dealersList) {
     const dealers = "#dealersList";
+
+    $(`${dealers}`).find('.single-dealer').remove().end();
 
     dealersList.forEach(function (item) {
         const dealer = item;
@@ -730,7 +365,6 @@ Site.Dealers.BuildDealersList = function (dealersList) {
 }
 
 Site.Dealers.SelectDealer = function (initialLatitude = 0, initialLongitude = 0) {
-    console.log({ initialLatitude })
     const dealer = '.single-dealer';
     const dealerMap = '#dealersMap';
     const zoom = 15
