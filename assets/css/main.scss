@@ -678,6 +678,11 @@ main {
                 img {
                     display: block;
                     width: 100%;
+
+                    @media #{$media-lg} {
+                        display: initial;
+                        width: auto;
+                    }
                 }
             }
 
