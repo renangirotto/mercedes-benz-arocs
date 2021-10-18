@@ -658,6 +658,7 @@ main {
             color: $c-white;
             background-color: $c-black;
             cursor: pointer;
+            outline: none;
 
             &.active {
                 background-color: $c-blue-1;
@@ -871,7 +872,7 @@ main {
                     td {
                         padding: 9px 0;
                         border-bottom: 1px solid #d5d5d6;
-                        font-size: 14px;
+                        font-size: 22px;
                         line-height: 1.2;
 
                         @media #{$media-lg} {
@@ -1200,10 +1201,12 @@ main {
         margin-bottom: 54px;
         font-family: "Corporate-S";
         font-weight: 300;
+        font-size: 28px;
         color: $c-grey-1;
-
+        
         @media #{$media-lg} {
             margin-bottom: 32px;
+            font-size: 18px;
         }
     }
 
