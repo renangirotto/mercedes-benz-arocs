@@ -266,7 +266,7 @@ Site.Dealers.RequestCities = function (apiBase, state) {
     const dealers = "#dealersList";
     const dealerMap = '#dealersMap';
 
-    const selectedState = $('#dealersState option:selected').val();
+    let selectedState = $('#dealersState option:selected').val();
 
     if (selectedState !== 'selecione') {
         const requestCities = fetch(`${apiBase}/get-dealers-external?type=cities&state=${selectedState}`);
@@ -330,7 +330,10 @@ Site.Dealers.RequestDealerByCep = function (apiBase, cepValue) {
 }
 
 Site.Dealers.RequestDealerByStateAndCity = function (apiBase, state, city) {
-    const requestByStateAndCity = fetch(`${apiBase}/get-dealers-external?type=dealers&state=${state}&city=${city}`);
+    let selectedState = $('#dealersState option:selected').val();
+    let selectedCity = $('#dealersCity option:selected').val();
+
+    const requestByStateAndCity = fetch(`${apiBase}/get-dealers-external?type=dealers&state=${selectedState}&city=${selectedCity}`);
 
     requestByStateAndCity.then(async function (response) {
         await response.json().then(function (result) {
