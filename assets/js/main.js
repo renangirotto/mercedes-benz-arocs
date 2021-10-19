@@ -266,8 +266,10 @@ Site.Dealers.RequestCities = function (apiBase, state) {
     const dealers = "#dealersList";
     const dealerMap = '#dealersMap';
 
-    if (state !== 'selecione') {
-        const requestCities = fetch(`${apiBase}/get-dealers-external?type=cities&state=${state}`);
+    const selectedState = $('#dealersState option:selected').val();
+
+    if (selectedState !== 'selecione') {
+        const requestCities = fetch(`${apiBase}/get-dealers-external?type=cities&state=${selectedState}`);
 
         requestCities.then(function (response) {
             response.json().then(function (result) {
@@ -291,7 +293,7 @@ Site.Dealers.RequestCities = function (apiBase, state) {
                     if (city === 'selecione') {
                         $(`${dealers}`).parent().removeClass('active');
                     } else {
-                        Site.Dealers.RequestDealerByStateAndCity(apiBase, state, city);
+                        Site.Dealers.RequestDealerByStateAndCity(apiBase, selectedState, city);
                     }
                 })
             }),
@@ -301,7 +303,7 @@ Site.Dealers.RequestCities = function (apiBase, state) {
         })
     }
 
-    if (state === 'selecione') {
+    if (selectedState === 'selecione') {
         $(`${citySelect}`).find('option').remove().end();
         $(`${citySelect}`).append(
             $('<option>').val('selecione').text('Selecione a cidade')
