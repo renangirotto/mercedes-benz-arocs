@@ -514,7 +514,7 @@ main {
 
             @media #{$media-lg} {
                 margin-bottom: 16px;
-                font-size: 18px;
+                font-size: 20px;
             }
         }
 
@@ -525,7 +525,7 @@ main {
             color: $c-grey-1;
 
             @media #{$media-lg} {
-                font-size: 18px;
+                font-size: 20px;
             }
 
             + p {
@@ -603,11 +603,11 @@ main {
         margin-bottom: 32px;
         font-family: "Corporate-S";
         font-weight: 300;
-        font-size: 28px;
+        font-size: 31.5px;
         color: $c-grey-1;
 
         @media #{$media-lg} {
-            font-size: 18px;
+            font-size: 20px;
         }
     }
 
@@ -716,7 +716,7 @@ main {
                     margin: 0;
                     font-family: "Corporate-S";
                     font-weight: 300;
-                    font-size: 28px;
+                    font-size: 31.5px;
                     color: $c-grey-1;
 
                     @media #{$media-lg} {
@@ -806,12 +806,12 @@ main {
         margin-bottom: 30px;
         font-family: "Corporate-S";
         font-weight: 300;
-        font-size: 28px;
+        font-size: 31.5px;
         color: $c-grey-1;
 
         @media #{$media-lg} {
             margin-bottom: 58px;
-            font-size: 18px;
+            font-size: 20px;
         }
     }
 
@@ -836,13 +836,15 @@ main {
             }
 
             small {
+                display: inline-block;
+                margin-top: 10px;
                 font-family: "Corporate-S";
-                font-size: 10px;
+                font-size: 22px;
                 font-style: italic;
                 color: $c-grey-2;
 
                 @media #{$media-lg} {
-                    font-size: 8px;
+                    font-size: 12px;
                 }
             }
         }
@@ -1079,12 +1081,12 @@ main {
                 margin-bottom: 52px;
                 font-family: "Corporate-S";
                 font-weight: 300;
-                font-size: 28px;
+                font-size: 31.5px;
                 color: $c-grey-1;
 
                 @media #{$media-lg} {
                     margin-bottom: 15px;
-                    font-size: 18px;
+                    font-size: 20px;
                 }
             }
 
@@ -1131,12 +1133,12 @@ main {
         margin-bottom: 45px;
         font-family: "Corporate-S";
         font-weight: 300;
-        font-size: 28px;
+        font-size: 31.5px;
         color: $c-grey-1;
 
         @media #{$media-lg} {
             margin-bottom: 32px;
-            font-size: 18px;
+            font-size: 20px;
         }
     }
 
@@ -1211,12 +1213,12 @@ main {
         margin-bottom: 54px;
         font-family: "Corporate-S";
         font-weight: 300;
-        font-size: 28px;
+        font-size: 31.5px;
         color: $c-grey-1;
         
         @media #{$media-lg} {
             margin-bottom: 32px;
-            font-size: 18px;
+            font-size: 20px;
         }
     }
 
@@ -1260,7 +1262,7 @@ main {
             h3 {
                 font-family: "Corporate-A-Condensed";
                 font-weight: normal;
-                font-size: 45px;
+                font-size: 41px;
             }
         }
 
@@ -1280,7 +1282,7 @@ main {
             .accordion-item {
                 font-family: "Corporate-S-Pro";
                 font-weight: normal;
-                font-size: 28px;
+                font-size: 31.5px;
                 text-align: center;
                 color: $c-grey-1;
 
@@ -1319,11 +1321,11 @@ main {
 
                 p {
                     margin-bottom: 36px;
-                    font-size: 28px;
+                    font-size: 31.5px;
                     text-align: left;
 
                     @media #{$media-lg} {
-                        font-size: 18px;
+                        font-size: 20px;
                     }
 
                     strong {
@@ -1407,12 +1409,12 @@ main {
         margin-bottom: 50px;
         font-family: "Corporate-S";
         font-weight: 300;
-        font-size: 28px;
+        font-size: 31.5px;
         color: $c-grey-1;
 
         @media #{$media-lg} {
             margin-bottom: 34px;
-            font-size: 18px;
+            font-size: 20px;
         }
     }
 
@@ -1571,12 +1573,12 @@ main {
         margin-bottom: 44px;
         font-family: "Corporate-S";
         font-weight: 300;
-        font-size: 28px;
+        font-size: 31.5px;
         color: $c-grey-1;
 
         @media #{$media-lg} {
             margin-bottom: 32px;
-            font-size: 18px;
+            font-size: 20px;
         }
 
         a {
@@ -1598,7 +1600,7 @@ main {
             justify-content: center;
             padding: 15px 20px;
             border: 1px solid $c-blue-1;
-            font-size: 28px;
+            font-size: 31.5px;
             text-decoration: none;
             text-align: center;
             color: $c-blue-1;
@@ -1745,30 +1747,30 @@ main {
                 h6 {
                     margin-bottom: 15px;
                     font-weight: normal;
-                    font-size: 28px;
+                    font-size: 31.5px;
                     text-transform: uppercase;
 
                     @media #{$media-lg} {
-                        font-size: 18px;
+                        font-size: 20px;
                     }
                 }
 
                 p {
                     margin-bottom: 5px;
-                    font-size: 28px;
+                    font-size: 31.5px;
 
                     @media #{$media-lg} {
-                        font-size: 18px;
+                        font-size: 20px;
                     }
                 }
 
                 a {
-                    font-size: 28px;
+                    font-size: 31.5px;
                     color: $c-blue-1;
                     text-decoration: none;
 
                     @media #{$media-lg} {
-                        font-size: 18px;
+                        font-size: 20px;
                     }
                 }
             }
@@ -1934,7 +1936,7 @@ main {
                     a {
                         font-family: "Corporate-S";
                         font-weight: normal;
-                        font-size: 36px;
+                        font-size: 31.5px;
                         text-decoration: none;
                         color: $c-grey-6;
 
@@ -2201,7 +2203,7 @@ main {
         color: $c-grey-1;
 
         span {
-            font-size: 18px;
+            font-size: 20px;
         }
 
         p {
