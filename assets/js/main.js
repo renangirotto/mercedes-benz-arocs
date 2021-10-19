@@ -126,9 +126,21 @@ Site.Accordion = function () {
 
         if (isActive) {
             clickedAccordion.parent().removeClass('active')
+
+            const offSetTop = $(this).offset().top
+
+            const diference = $(window).width() > 992 ? 137 : 156
+            let body = $("html, body");
+            body.stop().animate({ scrollTop: offSetTop - diference - 50 }, 500);
         } else {
             accordion.parent().removeClass('active')
             clickedAccordion.parent().addClass('active')
+
+            const offSetTop = $(this).offset().top
+
+            const diference = $(window).width() > 992 ? 137 : 156
+            let body = $("html, body");
+            body.stop().animate({ scrollTop: offSetTop - diference - 50 }, 500);
         }
     })
 }
