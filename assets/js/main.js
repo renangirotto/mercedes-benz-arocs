@@ -273,6 +273,10 @@ Site.Dealers.RequestCities = function (apiBase, state) {
             response.json().then(function (result) {
                 $(`${citySelect} option`).remove();
 
+                $(`${citySelect}`).append(
+                    $('<option>').val('selecione').text('Selecione a cidade')
+                )
+
                 result.Cities.forEach(function (item) {
                     const city = item
 
@@ -308,12 +312,14 @@ Site.Dealers.RequestCities = function (apiBase, state) {
     }
 }
 
-Site.Dealers.RequestDealerByCep = function (apiBase, cepValue) {
+Site.Dealers.RequestDealerByCep = async function (apiBase, cepValue) {
     const requestByCep = fetch(`${apiBase}/get-dealers-external?type=dealers&zipCode=${cepValue}`);
 
     requestByCep.then(function (response) {
-        response.json().then(function (result) {
-            Site.Dealers.BuildDealersList(result.Dealers);
+        await response.json().then(function (result) {
+            if (result !== undefined) {
+                Site.Dealers.BuildDealersList(result.Dealers);
+            }
         }),
             function (error) {
                 console.log({ error });
@@ -321,12 +327,14 @@ Site.Dealers.RequestDealerByCep = function (apiBase, cepValue) {
     })
 }
 
-Site.Dealers.RequestDealerByStateAndCity = function (apiBase, state, city) {
+Site.Dealers.RequestDealerByStateAndCity = async function (apiBase, state, city) {
     const requestByStateAndCity = fetch(`${apiBase}/get-dealers-external?type=dealers&state=${state}&city=${city}`);
 
     requestByStateAndCity.then(function (response) {
-        response.json().then(function (result) {
-            Site.Dealers.BuildDealersList(result.Dealers);
+        await response.json().then(function (result) {
+            if (result !== undefined) {
+                Site.Dealers.BuildDealersList(result.Dealers);
+            }
         }),
             function (error) {
                 console.log({ error });

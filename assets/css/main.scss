@@ -43,6 +43,8 @@ main {
 .container {
     width: 100%;
     max-width: 1178px;
+    padding: 0;
+    position: static;
     margin: 0 auto;
 }
 
@@ -460,7 +462,7 @@ main {
         margin-bottom: 72px;
         background-image: url("../images/bg-1.png");
         background-position: 50vw top;
-        background-size: 976px 96%;
+        background-size: 976px 706px;
     }
 
     .box-text {
@@ -554,7 +556,7 @@ main {
 
         @media #{$media-lg} {
             width: 571px;
-            top: 170px;
+            top: 140px;
             left: 50%;
             margin-left: -50px;
             bottom: auto;
