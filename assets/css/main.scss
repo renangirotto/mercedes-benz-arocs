@@ -411,6 +411,14 @@ main {
                 height: 0;
                 padding-bottom: 56.25%;
                 position: relative;
+
+                @media #{$media-lg} {
+                    width: 80%;
+                }
+
+                @media #{$media-xxl} {
+                    width: 100%;
+                }
             }
 
             .sBannner-modal-video {
